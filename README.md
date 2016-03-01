@@ -21,6 +21,58 @@ In `AVFoundation`, the basic steps for capturing camera input is as following:
 
 **See `CaptureCamera.xcodeproj` for example code.**
 
+### Snippet
+
+```{swift}
+let session = AVCaptureSession()
+
+// Step 1.
+// check if the session can add particular preset
+if session.canSetSessionPreset(AVCaptureSessionPresetPhoto) {
+    session.sessionPreset = AVCaptureSessionPresetPhoto
+} else {
+    // handle the error here...
+}
+
+// Step 2.
+guard let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo) else {
+    // handle the error here...
+}
+// Step 3.
+do {
+    let deviceInput = try AVCaptureDeviceInput(device:device)
+
+    if session.canAddInput(deviceInput) {
+        session.addInput(deviceInput)
+    }
+
+    // Step 4.
+    let previewLayer = AVCaptureVideoPreviewLayer(session:session)
+    previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+    previewLayer.frame = self.view.frame // set to full screen.
+
+    // Step 5.
+    self.view.layer.insertSublayer(previewLayer, atIndex:0) // preset the preview layer.
+
+    // Step 6.
+    let stillImageOutput = AVCaptureStillImageOutput()
+    stillImageOutput.outputSettings = [AVVideoCodecKey:AVVideoCodecJPEG]
+
+    // Step 7.
+    if session.canAddOutput(stillImageOutput){
+        session.addOutput(stillImageOutput)
+    } else {
+        // handle error here
+    }
+
+    // Step 8.
+    session.startRunning()
+} catch {
+    // handle the error here...
+}
+
+```
+
 ## References
 
 - [Custom Camera View & Taking Photos](https://www.youtube.com/watch?v=Xv1FfqVy-KM)

@@ -59,7 +59,6 @@ class ViewController: UIViewController {
                 // 4. setup layer for the capture view.
                 let previewLayer = AVCaptureVideoPreviewLayer(session: session)
                 previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-                print(captureView.frame)
                 previewLayer.frame = captureView.frame
                 
                 // 5. add preview layer to super view's layer.
