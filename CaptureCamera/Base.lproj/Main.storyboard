@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CaptureCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQl-di-aFJ">
+                                <rect key="frame" x="0.0" y="47" width="414" height="414"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oQl-di-aFJ" secondAttribute="height" multiplier="1:1" id="ldx-99-rsZ"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Error" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-H1-rVT">
+                                <rect key="frame" x="157" y="590" width="101" height="46"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8b7-H1-rVT" secondAttribute="height" multiplier="101:46" id="iIX-zA-C3J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oQl-di-aFJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="4BT-tr-I1i"/>
+                            <constraint firstItem="8b7-H1-rVT" firstAttribute="top" secondItem="oQl-di-aFJ" secondAttribute="bottom" constant="129" id="5FB-Mc-R9E"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oQl-di-aFJ" secondAttribute="bottom" constant="275" id="8Rm-9g-E2d"/>
+                            <constraint firstItem="oQl-di-aFJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="Hti-ez-ZGe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8b7-H1-rVT" secondAttribute="bottom" constant="100" id="JiQ-2l-XDW"/>
+                            <constraint firstItem="8b7-H1-rVT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bNu-7q-nw8"/>
+                            <constraint firstItem="oQl-di-aFJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kaZ-oE-COF"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="captureView" destination="oQl-di-aFJ" id="lHj-uB-sj0"/>
+                        <outlet property="textMessge" destination="8b7-H1-rVT" id="sUq-9U-GnM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="429"/>
+        </scene>
+    </scenes>
+</document>
