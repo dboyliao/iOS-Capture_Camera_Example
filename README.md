@@ -77,3 +77,4 @@ do {
 
 - [Custom Camera View & Taking Photos](https://www.youtube.com/watch?v=Xv1FfqVy-KM)
 - [Understanding AV Foundation](https://www.youtube.com/watch?v=mCiZW2xW4Ks)
+- [Access Front Camera](http://stackoverflow.com/questions/29155623/how-to-get-the-front-camera-in-swift)
